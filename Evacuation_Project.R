@@ -25,7 +25,8 @@ aed <- "+proj=eqdc +lat_0=0 +lon_0=0 +lat_1=33 +lat_2=45 +x_0=0 +y_0=0 +ellps=GR
 wgs <- "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
 
 #Load Data###################################################
-#!!!!!!!This was done on a local version of R. For Positcloud use, update file path to "data/evacuation/edges.rds" or the relevant version of it!!!!!!!!!!!!!
+
+data = read_rds("dorian.rds")
 
 edges2 = read_rds("edges.rds")
 
@@ -109,8 +110,6 @@ map1
 
 #Create a chart showing the top ten from above with a color scale corresponding to their median incomes
 
-na.value.forplot <- 'grey'
-
 chart1 <- 
   ggplot(data = csnedgestop10, mapping = aes(x = reorder(name, evacuationrate),
                                              y = evacuationrate, fill = median_income)) +
@@ -133,12 +132,20 @@ chart1 <-
 
 edgesglades <- edges2 %>%
   filter(from_geoid == "1209991274", evacuation>50)
+  
+glimpse(edgesglades)
 
 edgesjasper <- edges2 %>%
   filter(from_geoid == "1204791651", evacuation>900)
 
+glimpse(edgesjasper)
+
 edgesnorthcolumbia <- edges2 %>%
   filter(from_geoid == "1204791651", evacuation>900)
 
+glimpse(edgesnorthcolumbia)
+
 edgeswestbrevard <- edges2 %>%
   filter(from_geoid == "1200993588", evacuation>600)
+
+glimpse(edgeswestbrevard)
