@@ -1,9 +1,9 @@
 # Evacuation-Project
 
-This projects investigates a possible correlation between median income and places where evacuation rates spiked the most significantly in response to Hurricane Dorian, which passed by the east coast of the state on September 4, 2019.
+This project investigates a possible correlation between median income and places where evacuation rates spiked the most significantly in response to Hurricane Dorian, which passed by the east coast of the state on September 4, 2019.
 All data needed to run the script and the script itself is included in the zipfile.
 
-Datasets:
+Datasets (provided via course with permission to share):
 - “Nodes”, a .rds where each row was a county subdivision and each column was some kind of demographic, economic, or social information about that row. Median income was missing in some cases, notably in Cape Sable.
 - “Edges”, a .rds where each row is a path between two Florida municipalities, by geoid, at a specific date and time block. It includes an “evacuation” column, the number of Facebook users at the indicated time who were leaving on that path (positive number) or staying (negative number) compared to that path’s normal level of movement. I filtered this dataset to include only rows coming from Florida.
 - "County_subdivisions", a .geojson file with the polygons of county subdivisions in Florida. Each row is a county subdivision, and each column is information like its geoid, name, county, and state.
